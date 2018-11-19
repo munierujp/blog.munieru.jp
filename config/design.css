@@ -1,3 +1,10 @@
+/* Responsive: yes */
+/* <system section="theme" selected="8454420450093337097"> */
+@import url("https://blog.hatena.ne.jp/-/theme/8454420450093337097.css");
+/* </system> */
+
+@import url("https://raw.githubusercontent.com/munierujp/blog.munieru.jp/master/config/design.css");
+
 /* 2カラムレイアウト */
 #main {
   width: calc(960px - 360px);
