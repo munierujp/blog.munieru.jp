@@ -259,6 +259,16 @@ a.entry-see-more {
 }
 /* /ソーシャルボタン */
 
+/* フォント */
+#title {
+  font-weight: 700;
+}
+
+#blog-description {
+  font-weight: 700 !important;
+}
+/* /フォント */
+
 /* 画像にボーダーをつける */
 .munieru-img-border {
     border: 1px solid #ddd;
