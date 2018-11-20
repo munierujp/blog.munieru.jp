@@ -3,6 +3,13 @@
 @import url("https://blog.hatena.ne.jp/-/theme/8454420450093337097.css");
 /* </system> */
 
+/* Mixed Content解消 */
+.hatena-module-search-box .search-module-button {
+  background: rgba(48,48,48,.5) url(https://cdn.blog.st-hatena.com/images/theme/search_w@2x.png) no-repeat center center;
+  background-size: 24px 24px;
+}
+/* /Mixed Content解消 */
+
 /* 2カラムレイアウト */
 #main {
   width: calc(960px - 360px);
