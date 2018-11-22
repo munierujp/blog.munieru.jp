@@ -1,4 +1,4 @@
-<div id="munieru-sidebar-recommend-list" style="text-align:center"></div>
+<div id="munieru-module-recommend"></div>
 <script>
 (function () {
   const URL = 'https://api.munieru.jp/v1/recommend.json'
@@ -7,7 +7,7 @@
     .then(r => r.json())
     .then(r => r.items)
     .then(items => {
-      const $itemList = $('#munieru-sidebar-recommend-list')
+      const $itemList = $('#munieru-module-recommend')
 
       items.forEach((item, i) => {
         const title = item.title.short
@@ -16,12 +16,18 @@
 
         $itemList.append(`<div><a href="${url}" target="_blank"><img src="${imageURL}" style="height:200px"></a></div>`)
         $itemList.append(`<div><a href="${url}" target="_blank">${title}</a></div>`)
-        if (i !== items.length - 1) {
-          $itemList.append('<hr>')
-        }
+        $itemList.append('<hr>')
       })
     })
     .catch(e => console.error(e, URL))
   }, false)
 })()
 </script>
+
+<style>
+#munieru-module-recommend div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+</style>
