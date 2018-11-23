@@ -14,8 +14,7 @@
         const url = item.url.short
         const imageURL = item.image
 
-        $itemList.append(`<div><a href="${url}" target="_blank"><img src="${imageURL}" style="height:200px"></a></div>`)
-        $itemList.append(`<div><a href="${url}" target="_blank">${title}</a></div>`)
+        $itemList.append(`<a href="${url}" target="_blank"><div><img src="${imageURL}" style="height:200px"></div><div><span>${title}</span></div></a>`)
         $itemList.append('<hr>')
       })
     })
