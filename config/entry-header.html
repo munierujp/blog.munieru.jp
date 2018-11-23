@@ -1,33 +1,33 @@
 <div class="sns-header">
-  <ul class="sns-area">
-    <li>
+  <ul class="sns-header-items">
+    <li class="sns-header-item">
       <a
-        class="sns-twitter sns-link"
+        class="sns-header-link sns-header-link-twitter"
         href="https://twitter.com/intent/tweet?url={URLEncodedPermalink}&text={Title}&via=munieru_jp"
         target="_blank">
-        <i class="blogicon-twitter lg"></i>
-        <span class="sns-txt">Twitter</span>
+        <i class="sns-header-icon sns-header-icon-twitter lg"></i>
+        <span class="sns-header-label">Twitter</span>
       </a>
     </li>
-    <li>
+    <li class="sns-header-item">
       <a
-        class="sns-facebook sns-link"
+        class="sns-header-link sns-header-link-facebook"
         href="https://www.facebook.com/sharer/sharer.php?u={URLEncodedPermalink}"
         onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
         target="_blank">
-        <i class="blogicon-facebook lg" ></i>
-        <span class="sns-txt">Facebook</span>
+        <i class="sns-header-icon sns-header-icon-facebook lg" ></i>
+        <span class="sns-header-label">Facebook</span>
       </a>
     </li>
-    <li>
+    <li class="sns-header-item">
       <a
+        class="sns-header-link sns-header-link-hatebu hatena-bookmark-button"
         href="http://b.hatena.ne.jp/entry/{Permalink}"
-        class="hatena-bookmark-button sns-bookmark sns-link"
         data-hatena-bookmark-title="{Title}"
         data-hatena-bookmark-layout="simple"
         title="このエントリーをはてなブックマークに追加">
-        <i class="blogicon-bookmark lg"></i>
-        <span class="sns-txt">Hatena</span>
+        <i class="sns-header-icon sns-header-icon-bookmark lg"></i>
+        <span class="sns-header-label">Hatena</span>
       </a>
     </li>
   </ul>
@@ -40,3 +40,108 @@
   }, false)
 })()
 </script>
+
+<style>
+.sns-header {
+  padding: 0 24px;
+}
+
+.sns-header-items {
+  margin: 30px auto 10px;
+  padding: 0;
+  overflow: hidden;
+  table-layout: fixed;
+  display: table;
+  width: 100%;
+}
+
+.sns-header-items li {
+  list-style-type: none;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.sns-header-items li:last-child {
+  margin-right: 0;
+}
+
+.sns-header-link {
+  position: relative;
+  display: block;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  overflow: hidden;
+  height: 42px;
+  line-height: 42px;
+}
+
+.sns-header-link::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  background-color: rgba(255,255,255,.3);
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.sns-header-link:hover {
+  text-decoration: none;
+}
+
+.sns-header-link:hover::after {
+  -webkit-animation: circle .75s;
+  animation: circle .75s;
+}
+@-webkit-keyframes circle {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+  }
+}
+@keyframes circle {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.sns-header-link-twitter {
+  background: #55acee;
+}
+
+.sns-header-link-facebook {
+  background: #3a5795;
+}
+
+.sns-header-link-hatebu {
+  background: #00A5DE;
+}
+
+.sns-header-icon {
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .sns-header-label {
+    display: none;
+  }
+  .sns-header-icon {
+    margin-right: 0;
+  }
+}
+</style>
