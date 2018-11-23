@@ -86,7 +86,7 @@
   content: '';
   width: 0;
   height: 0;
-  background-color: rgba(255,255,255,.3);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -98,22 +98,26 @@
 }
 
 .sns-footer-link:hover::after {
-  -webkit-animation: circle .75s;
-  animation: circle .75s;
+  -webkit-animation: circle 0.75s;
+  animation: circle 0.75s;
 }
+
 @-webkit-keyframes circle {
   50% {
     opacity: 1;
   }
+
   100% {
     width: 300px;
     height: 300px;
   }
 }
+
 @keyframes circle {
   50% {
     opacity: 1;
   }
+
   100% {
     width: 300px;
     height: 300px;
@@ -129,7 +133,7 @@
 }
 
 .sns-footer-link-hatebu {
-  background: #00A5DE;
+  background: #00a5de;
 }
 
 .sns-footer-icon {
@@ -140,6 +144,7 @@
   .sns-footer-label {
     display: none;
   }
+
   .sns-footer-icon {
     margin-right: 0;
   }
