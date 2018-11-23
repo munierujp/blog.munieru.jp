@@ -1,15 +1,9 @@
 <script>
 (function () {
 	window.addEventListener('load', () => {
-	  moveSnsButton()
 	  appendRecommendItems()
 	  makeExternalLinkOpenInNewTab()
 	}, false)
-
-	function moveSnsButton () {
-	  $('.entry-header').after($('.sns-header'))
-	  $('.entry-footer').before($('.sns-footer'))
-	}
 
 	function appendRecommendItems () {
 	  const URL = 'https://api.munieru.jp/v1/recommend.json'
