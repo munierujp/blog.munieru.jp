@@ -1,13 +1,16 @@
 /* Responsive: yes */
+
 /* <system section="theme" selected="8454420450093337097"> */
 @import url("https://blog.hatena.ne.jp/-/theme/8454420450093337097.css");
+
 /* </system> */
 
 /* Mixed Content解消 */
 .hatena-module-search-box .search-module-button {
-  background: rgba(48,48,48,.5) url(https://cdn.blog.st-hatena.com/images/theme/search_w@2x.png) no-repeat center center;
+  background: rgba(48, 48, 48, 0.5) url(https://cdn.blog.st-hatena.com/images/theme/search_w@2x.png) no-repeat center center;
   background-size: 24px 24px;
 }
+
 /* /Mixed Content解消 */
 
 /* 2カラムレイアウト */
@@ -30,12 +33,9 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   border-radius: 2px;
   -webkit-animation-duration: 0.4s;
-  -webkit-animation-duration: 0.4s;
-  -webkit-animation-fill-mode: both;
   -webkit-animation-fill-mode: both;
   -webkit-animation-name: slideRight;
   -webkit-animation-name: slideRight;
-  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
@@ -76,7 +76,9 @@
 }
 
 @media (max-width: 960px) {
-  #main, #box2, .hatena-module {
+  #main,
+  #box2,
+  .hatena-module {
     width: 100%;
     float: none;
   }
@@ -91,15 +93,12 @@
     box-shadow: none;
     border-radius: initial;
     -webkit-animation-duration: initial;
-    -webkit-animation-duration: initial;
-    -webkit-animation-fill-mode: none;
     -webkit-animation-fill-mode: none;
     -webkit-animation-name: initial;
-    -webkit-animation-name: initial;
-    -webkit-animation-timing-function: initial;
     -webkit-animation-timing-function: initial;
   }
 }
+
 /* /2カラムレイアウト */
 
 /* カスタムカラー */
@@ -107,52 +106,82 @@ body {
   color: #212121;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover,
+h1 a:visited,
+h2 a:visited,
+h3 a:visited,
+h4 a:visited,
+h5 a:visited,
+h6 a:visited {
   color: #212121;
 }
 
 /* グローバルヘッダー（一番上のはてなロゴ等があるエリア） */
 #globalheader-container {
-  background-color: #3F51B5;
+  background-color: #3f51b5;
   color: #fff;
 }
 
 /* ヘッダー（ブログ名があるエリア） */
 #blog-title {
-  background-color: #3F51B5;
+  background-color: #3f51b5;
 }
+
+/* /カスタムカラー */
+
+/* リスト形式のリンクをブロック化 */
+.hatena-module-links ul li a,
+.hatena-module-category ul li a {
+  display: block;
+}
+
+/* /リスト形式のリンクをブロック化 */
+
+/* カスタムカラー */
 #title a {
   color: #fff;
 }
 
 /* タイトルをホバーした際のカラー */
-#title a:after {
+#title a::after {
   background-color: #fff;
 }
 
 /* フッター */
 #footer {
-  background-color: #3F51B5;
+  background-color: #3f51b5;
   color: #fff;
 }
 
 /* 日付 */
 .date-day {
-  background: #3F51B5;
+  background: #3f51b5;
   color: #fff;
 }
 
 /* 続きを読む */
 a.entry-see-more {
-  background-color: #3F51B5;
+  background-color: #3f51b5;
   color: #fff;
 }
 
 /* 読者になる */
 .hatena-follow-button {
   color: #fff !important;
-  background: #3F51B5 !important;
+  background: #3f51b5 !important;
 }
+
 /* /カスタムカラー */
 
 /* フォント */
@@ -163,16 +192,12 @@ a.entry-see-more {
 #blog-description {
   font-weight: 700 !important;
 }
-/* /フォント */
 
-/* リスト形式のリンクをブロック化 */
-.hatena-module-links ul li a, .hatena-module-category ul li a {
-  display: block;
-}
-/* /リスト形式のリンクをブロック化 */
+/* /フォント */
 
 /* 画像にボーダーをつける */
 .munieru-img-border {
-    border: 1px solid #ddd;
+  border: 1px solid #ddd;
 }
+
 /* /画像にボーダーをつける */
