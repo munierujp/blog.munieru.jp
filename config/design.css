@@ -201,3 +201,10 @@ a.entry-see-more {
 }
 
 /* /画像にボーダーをつける */
+
+/* 画像の横幅を制限 */
+.entry-content table img {
+  max-width: 100%;
+}
+
+/* 画像の横幅を制限 */
