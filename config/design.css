@@ -195,13 +195,6 @@ a.entry-see-more {
 
 /* /フォント */
 
-/* 画像にボーダーをつける */
-.munieru-img-border {
-  border: 1px solid #ddd;
-}
-
-/* /画像にボーダーをつける */
-
 /* 画像の横幅を制限 */
 .entry-content table img {
   max-width: 100%;
