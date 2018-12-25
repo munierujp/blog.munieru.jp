@@ -184,16 +184,16 @@ a.entry-see-more {
 
 /* /カスタムカラー */
 
-/* フォント */
+/* ヘッダー */
 #title {
   font-weight: 700;
 }
 
 #blog-description {
-  font-weight: 700 !important;
+  display: none;
 }
 
-/* /フォント */
+/* /ヘッダー */
 
 /* 画像の横幅を制限 */
 .entry-content table img {
