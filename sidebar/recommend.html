@@ -5,21 +5,21 @@
   const URL = 'https://api.munieru.jp/v1/recommend.json'
   window.addEventListener('load', () => {
     fetch(URL)
-    .then(r => r.json())
-    .then(r => r.items)
-    .then(items => {
-      const $itemList = $('#munieru-module-recommend')
+      .then(r => r.json())
+      .then(r => r.items)
+      .then(items => {
+        const $itemList = $('#munieru-module-recommend')
 
-      items.forEach((item, i) => {
-        const title = item.title.short
-        const url = item.url.short
-        const imageURL = item.image
+        items.forEach((item, i) => {
+          const title = item.title.short
+          const url = item.url.short
+          const imageURL = item.image
 
-        $itemList.append(`<a href="${url}" target="_blank"><div><img src="${imageURL}" style="height:200px"></div><div><span>${title}</span></div></a>`)
-        $itemList.append('<hr>')
+          $itemList.append(`<a href="${url}" target="_blank"><div><img src="${imageURL}" style="height:200px"></div><div><span>${title}</span></div></a>`)
+          $itemList.append('<hr>')
+        })
       })
-    })
-    .catch(e => console.error(e, URL))
+      .catch(e => console.error(e, URL))
   }, false)
 })()
 </script>
