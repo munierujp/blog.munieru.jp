@@ -1,7 +1,8 @@
 {
   "name": "blog.munieru.jp",
   "scripts": {
-    "lint": "stylelint '**/*.{css,html}'"
+    "lint:js": "eslint --ext .js,.html --ignore-path .gitignore .",
+    "lint:css": "stylelint '**/*.{css,html}'"
   },
   "devDependencies": {
     "eslint": "^5.12.0",
