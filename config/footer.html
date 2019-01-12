@@ -1,75 +1,73 @@
 <script>
 (function () {
-	window.addEventListener('load', () => {
-		appendColorCodePreview()
-	  appendRecommendItems()
-	  makeExternalLinkOpenInNewTab()
-	}, false)
+  window.addEventListener('load', () => {
+    appendColorCodePreview()
+    appendRecommendItems()
+    makeExternalLinkOpenInNewTab()
+  }, false)
 
-	function appendColorCodePreview () {
-		  [...document.querySelectorAll('code')]
-			.filter(code => code.textContent.match(/^#(\w{3}|\w{6})$/))
-			.forEach(code => {
-				const color = code.textContent
-				code.innerHTML = `${color}<span style="display: inline-block; margin-left: 4px; border: 1px solid #d1d5da; border-radius: 3px; border-color: rgba(27,31,35,.15); background-color: ${color}; height: 0.8em; width: 0.8em;"></span>`
-		  })
-	}
+  function appendColorCodePreview () {
+    [...document.querySelectorAll('code')]
+      .filter(code => code.textContent.match(/^#(\w{3}|\w{6})$/))
+      .forEach(code => {
+        const color = code.textContent
+        code.innerHTML = `${color}<span style="display: inline-block; margin-left: 4px; border: 1px solid #d1d5da; border-radius: 3px; border-color: rgba(27,31,35,.15); background-color: ${color}; height: 0.8em; width: 0.8em;"></span>`
+      })
+  }
 
-	function appendRecommendItems () {
-	  const URL = 'https://api.munieru.jp/v1/recommend.json'
-	  const IMAGE_WIDTH = 100
+  function appendRecommendItems () {
+    const URL = 'https://api.munieru.jp/v1/recommend.json'
+    const IMAGE_WIDTH = 100
 
-	  fetch(URL)
-		.then(r => r.json())
-		.then(r => r.items)
-		.then(items => {
-		  const $module = $('<div class="hatena-module"></div>')
-		  $module.append('<div class="hatena-module-title">おすすめ</div>')
-		  const $moduleBody = $('<div class="hatena-module-body"></div>')
-		  const $urlList = $('<ul class="hatena-urllist urllist-with-thumbnails"></ul>')
+    fetch(URL)
+      .then(r => r.json())
+      .then(r => r.items)
+      .then(items => {
+        const $module = $('<div class="hatena-module"></div>')
+        $module.append('<div class="hatena-module-title">おすすめ</div>')
+        const $moduleBody = $('<div class="hatena-module-body"></div>')
+        const $urlList = $('<ul class="hatena-urllist urllist-with-thumbnails"></ul>')
 
-		  items.map(item => {
-		    const title = item.title.long
-		    const url = item.url.short
-		    const imageURL = item.image
+        items.map(item => {
+          const title = item.title.long
+          const url = item.url.short
+          const imageURL = item.image
 
-		    const $item = $('<li class="urllist-item"></li>')
-		    const $itemInner = $('<div class="urllist-item-inner"></div>')
-		    const $imageArea = $(`<div></div>`)
-		    .css({
-		      'text-align': 'center',
-		      'width': `${IMAGE_WIDTH}px`,
-		      'margin': '0 .7em 0.7em 0',
-		      'float': 'left'
-		    })
-		    const $imageLink = $(`<a href="${url}" target="_blank" rel="noopener noreferrer"></a>`)
-		    const $image = $(`<img src="${imageURL}" alt="${title}" title="${title}"">`)
-		    .css({
-		      'max-width': `${IMAGE_WIDTH}px`,
-		      'max-height': `${IMAGE_WIDTH}px`
-		    })
-		    $imageLink.append($image)
-		    $imageArea.append($imageLink)
-		    $itemInner.append($imageArea)
+          const $item = $('<li class="urllist-item"></li>')
+          const $itemInner = $('<div class="urllist-item-inner"></div>')
+          const $imageArea = $(`<div></div>`).css({
+            'text-align': 'center',
+            'width': `${IMAGE_WIDTH}px`,
+            'margin': '0 .7em 0.7em 0',
+            'float': 'left'
+          })
+          const $imageLink = $(`<a href="${url}" target="_blank" rel="noopener noreferrer"></a>`)
+          const $image = $(`<img src="${imageURL}" alt="${title}" title="${title}"">`).css({
+            'max-width': `${IMAGE_WIDTH}px`,
+            'max-height': `${IMAGE_WIDTH}px`
+          })
+          $imageLink.append($image)
+          $imageArea.append($imageLink)
+          $itemInner.append($imageArea)
 
-		    $itemInner.append(`<div><a href="${url}" class="urllist-title-link urllist-title">${title}</a></div>`)
-		    $item.append($itemInner)
-		    return $item
-		  })
-		  .forEach($item => $urlList.append($item))
+          $itemInner.append(`<div><a href="${url}" class="urllist-title-link urllist-title">${title}</a></div>`)
+          $item.append($itemInner)
+          return $item
+        })
+          .forEach($item => $urlList.append($item))
 
-		  $moduleBody.append($urlList)
-		  $module.append($moduleBody)
-		  $('#entry-footer-secondary-modules').append($module)
-		})
-		.catch(e => console.error(e, URL))
-	}
+        $moduleBody.append($urlList)
+        $module.append($moduleBody)
+        $('#entry-footer-secondary-modules').append($module)
+      })
+      .catch(e => console.error(e, URL))
+  }
 
-	function makeExternalLinkOpenInNewTab () {
-	  document.querySelectorAll(`a[href^="http"]:not([href^="${location.origin}"])`).forEach(link => {
-	    link.setAttribute('target', '_blank')
-	    link.setAttribute('rel', 'noopener noreferrer')
-	  })
-	}
+  function makeExternalLinkOpenInNewTab () {
+    document.querySelectorAll(`a[href^="http"]:not([href^="${location.origin}"])`).forEach(link => {
+      link.setAttribute('target', '_blank')
+      link.setAttribute('rel', 'noopener noreferrer')
+    })
+  }
 })()
 </script>
