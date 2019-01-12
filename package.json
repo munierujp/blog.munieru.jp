@@ -4,6 +4,7 @@
     "lint:js": "eslint --ext .js,.html --ignore-path .gitignore .",
     "lint:css": "stylelint '**/*.{css,html}'",
     "lint": "npm-run-all -p lint:*",
+    "fix:js": "eslint --fix --ext .js,.html --ignore-path .gitignore .",
     "fix:css": "stylelint --fix '**/*.{css,html}'"
   },
   "devDependencies": {
