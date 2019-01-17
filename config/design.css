@@ -201,3 +201,39 @@ a.entry-see-more {
 }
 
 /* 画像の横幅を制限 */
+
+/* コードブロック */
+.entry-content pre {
+  background-color: #fafafa;
+  color: #444;
+}
+
+span.synSpecial {
+  color: #c000c0;
+}
+
+span.synType {
+  color: #3ec63e;
+}
+
+span.synComment {
+  color: #4f80e5;
+}
+
+span.synPreProc {
+  color: #9355e6;
+}
+
+span.synIdentifier {
+  color: #51cfcf;
+}
+
+span.synConstant {
+  color: #f66;
+}
+
+span.synStatement {
+  color: #d88a17;
+}
+
+/* /コードブロック */
