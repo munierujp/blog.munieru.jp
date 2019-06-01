@@ -1,17 +1,24 @@
 <script>
 (function () {
   window.addEventListener('load', () => {
-    appendColorCodePreview()
+    addColorCodePreviews()
     makeExternalLinkOpenInNewTab()
   }, false)
 
-  function appendColorCodePreview () {
-    [...document.querySelectorAll('code')]
-      .filter(code => code.textContent.match(/^#(\w{3}|\w{6})$/))
-      .forEach(code => {
-        const color = code.textContent
-        code.innerHTML = `${color}<span style="display: inline-block; margin-left: 4px; border: 1px solid #d1d5da; border-radius: 3px; border-color: rgba(27,31,35,.15); background-color: ${color}; height: 0.8em; width: 0.8em;"></span>`
-      })
+  function addColorCodePreviews () {
+    getColorCodeElements().forEach(codeElement => {
+      const color = codeElement.textContent
+      codeElement.outerHTML = `${codeElement.outerHTML}<span class="jp-munieru-blog-color-code-preview" style="background-color: ${color};"></span>`
+    })
+  }
+
+  function getColorCodeElements () {
+    return Array.from(document.getElementsByTagName('code'))
+      .filter(codeElement => isColorCode(codeElement.textContent))
+  }
+
+  function isColorCode (text) {
+    return text.match(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/)
   }
 
   function makeExternalLinkOpenInNewTab () {
@@ -22,3 +29,14 @@
   }
 })()
 </script>
+
+<style>
+  .jp-munieru-blog-color-code-preview {
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    border: 1px solid #d1d5da;
+    border-color: rgba(27, 31, 35, 0.15);
+    border-radius: 3px;
+  }
+</style>
