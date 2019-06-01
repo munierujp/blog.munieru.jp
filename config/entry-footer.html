@@ -1,166 +1,131 @@
-<div class="sns-footer">
-  <ul class="sns-footer-items">
-    <li class="sns-footer-item">
+<div class="jp-munieru-blog-entry-footer-share">
+  <ul class="jp-munieru-blog-entry-footer-share-items">
+    <li class="jp-munieru-blog-entry-footer-share-item">
       <a
-        class="sns-footer-link sns-footer-link-twitter"
+        class="jp-munieru-blog-entry-footer-share-link jp-munieru-blog-entry-footer-share-link-twitter"
         href="https://twitter.com/intent/tweet?url={URLEncodedPermalink}&text={Title}%20-%20{BlogTitle}&via=munieru_jp"
         target="_blank">
-        <i class="sns-footer-icon blogicon-twitter lg"></i>
-        <span class="sns-footer-label">Twitter</span>
+        <i class="jp-munieru-blog-entry-footer-share-icon blogicon-twitter lg"></i>
+        <span class="jp-munieru-blog-entry-footer-share-label">Twitter</span>
       </a>
     </li>
-    <li class="sns-footer-item">
+    <li class="jp-munieru-blog-entry-footer-share-item">
       <a
-        class="sns-footer-link sns-footer-link-facebook"
+        class="jp-munieru-blog-entry-footer-share-link jp-munieru-blog-entry-footer-share-link-facebook"
         href="https://www.facebook.com/sharer/sharer.php?u={URLEncodedPermalink}"
         onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
         target="_blank">
-        <i class="sns-footer-icon blogicon-facebook lg" ></i>
-        <span class="sns-footer-label">Facebook</span>
+        <i class="jp-munieru-blog-entry-footer-share-icon blogicon-facebook lg"></i>
+        <span class="jp-munieru-blog-entry-footer-share-label">Facebook</span>
       </a>
     </li>
-    <li class="sns-footer-item">
+    <li class="jp-munieru-blog-entry-footer-share-item">
       <a
-        class="sns-footer-link sns-footer-link-hatebu hatena-bookmark-button"
+        class="jp-munieru-blog-entry-footer-share-link jp-munieru-blog-entry-footer-share-link-hatebu hatena-bookmark-button"
         href="http://b.hatena.ne.jp/entry/{Permalink}"
         data-hatena-bookmark-title="{Title}%20-%20{BlogTitle}"
         data-hatena-bookmark-layout="simple"
         title="このエントリーをはてなブックマークに追加">
-        <i class="sns-footer-icon blogicon-bookmark lg"></i>
-        <span class="sns-footer-label">Hatena</span>
+        <i class="jp-munieru-blog-entry-footer-share-icon blogicon-bookmark lg"></i>
+        <span class="jp-munieru-blog-entry-footer-share-label">Hatena</span>
       </a>
     </li>
     <li>
       <a
-        class="sns-footer-link sns-footer-link-pocket"
+        class="jp-munieru-blog-entry-footer-share-link jp-munieru-blog-entry-footer-share-link-pocket"
         href="http://getpocket.com/edit?url={URLEncodedPermalink}&title={Title}%20-%20{BlogTitle}"
-        onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"
-        >
-        <i class="sns-footer-icon blogicon-chevron-down"></i>
-        <span class="sns-footer-label">Pocket</span>
+        onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+        <i class="jp-munieru-blog-entry-footer-share-icon blogicon-chevron-down"></i>
+        <span class="jp-munieru-blog-entry-footer-share-label">Pocket</span>
       </a>
     </li>
   </ul>
 </div>
 
-<script>
-(function () {
-  window.addEventListener('load', () => {
-    $('.entry-footer').before($('.sns-footer'))
-  }, false)
-})()
-</script>
-
 <style>
-.sns-footer {
-  padding: 0 24px;
-}
-
-.sns-footer-items {
-  margin: 30px auto 10px;
-  padding: 0;
-  overflow: hidden;
-  table-layout: fixed;
-  display: table;
-  width: 100%;
-}
-
-.sns-footer-items li {
-  list-style-type: none;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.sns-footer-items li:last-child {
-  margin-right: 0;
-}
-
-.sns-footer-link {
-  position: relative;
-  display: block;
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  overflow: hidden;
-  height: 42px;
-  line-height: 42px;
-}
-
-.sns-footer-link::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  display: block;
-  content: '';
-  width: 0;
-  height: 0;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  opacity: 0;
-}
-
-.sns-footer-link:hover {
-  text-decoration: none;
-}
-
-.sns-footer-link:hover::after {
-  -webkit-animation: circle 0.75s;
-  animation: circle 0.75s;
-}
-
-@-webkit-keyframes circle {
-  50% {
-    opacity: 1;
+  .jp-munieru-blog-entry-footer-share {
+    padding: 0 24px;
   }
 
-  100% {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-@keyframes circle {
-  50% {
-    opacity: 1;
+  .jp-munieru-blog-entry-footer-share-items {
+    margin: 30px auto 10px;
+    padding: 0;
+    overflow: hidden;
+    table-layout: fixed;
+    display: table;
+    width: 100%;
   }
 
-  100% {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-.sns-footer-link-twitter {
-  background: #55acee;
-}
-
-.sns-footer-link-facebook {
-  background: #3a5795;
-}
-
-.sns-footer-link-hatebu {
-  background: #00a5de;
-}
-
-.sns-footer-link-pocket {
-  background: #ed4055;
-}
-
-.sns-footer-icon {
-  margin-right: 5px;
-}
-
-@media only screen and (max-width: 600px) {
-  .sns-footer-label {
-    display: none;
+  .jp-munieru-blog-entry-footer-share-items li {
+    list-style-type: none;
+    display: table-cell;
+    vertical-align: middle;
   }
 
-  .sns-footer-icon {
+  .jp-munieru-blog-entry-footer-share-items li:last-child {
     margin-right: 0;
   }
-}
+
+  .jp-munieru-blog-entry-footer-share-link {
+    position: relative;
+    display: block;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    overflow: hidden;
+    height: 42px;
+    line-height: 42px;
+  }
+
+  .jp-munieru-blog-entry-footer-share-link::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+
+  .jp-munieru-blog-entry-footer-share-link:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .jp-munieru-blog-entry-footer-share-link-twitter {
+    background: #55acee;
+  }
+
+  .jp-munieru-blog-entry-footer-share-link-facebook {
+    background: #3a5795;
+  }
+
+  .jp-munieru-blog-entry-footer-share-link-hatebu {
+    background: #00a5de;
+  }
+
+  .jp-munieru-blog-entry-footer-share-link-pocket {
+    background: #ed4055;
+  }
+
+  .jp-munieru-blog-entry-footer-share-icon {
+    margin-right: 5px;
+  }
+
+  @media only screen and (max-width: 960px) {
+    .jp-munieru-blog-entry-footer-share-label {
+      display: none;
+    }
+
+    .jp-munieru-blog-entry-footer-share-icon {
+      margin-right: 0;
+    }
+  }
 </style>
