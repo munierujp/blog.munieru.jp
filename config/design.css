@@ -13,6 +13,22 @@
   color: #444;
 }
 
+.entry-content pre.code[data-label] {
+  position: relative;
+  margin: 0 0 1.5em 0;
+  padding: 1.6em 1em 1em;
+}
+
+.entry-content pre.code[data-label]::before {
+  content: attr(data-label);
+  background-color: #444;
+  color: #fafafa;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 0.8em;
+}
+
 span.synSpecial {
   color: #c000c0;
 }
