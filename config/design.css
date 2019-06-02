@@ -66,3 +66,96 @@ span.synStatement {
 }
 
 /* /sidebar */
+
+/* share button */
+.jp-munieru-blog-entry-share {
+  padding: 0 24px;
+}
+
+.jp-munieru-blog-entry-share-items {
+  margin: 30px auto 10px;
+  padding: 0;
+  overflow: hidden;
+  table-layout: fixed;
+  display: table;
+  width: 100%;
+}
+
+.jp-munieru-blog-entry-share-items li {
+  list-style-type: none;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.jp-munieru-blog-entry-share-items li:last-child {
+  margin-right: 0;
+}
+
+.jp-munieru-blog-entry-share-link {
+  position: relative;
+  display: block;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  overflow: hidden;
+  height: 42px;
+  line-height: 42px;
+}
+
+.jp-munieru-blog-entry-share-link::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.jp-munieru-blog-entry-share-link:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.jp-munieru-blog-entry-share-link-twitter {
+  background: #55acee;
+}
+
+.jp-munieru-blog-entry-share-link-facebook {
+  background: #3a5795;
+}
+
+.jp-munieru-blog-entry-share-link-hatebu {
+  background: #00a5de;
+}
+
+.jp-munieru-blog-entry-share-link-line {
+  background: #00c300;
+}
+
+.jp-munieru-blog-entry-share-link-pocket {
+  background: #ed4055;
+}
+
+.jp-munieru-blog-entry-share-icon {
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .jp-munieru-blog-entry-share-label {
+    display: none;
+  }
+
+  .jp-munieru-blog-entry-share-icon {
+    margin-right: 0;
+  }
+}
+
+/* /share button */
