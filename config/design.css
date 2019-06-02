@@ -36,11 +36,6 @@
 /* /normalize link color */
 
 /* code block */
-.entry-content pre.code {
-  background-color: #fafafa;
-  color: #444;
-}
-
 .entry-content pre.code[data-label] {
   position: relative;
   margin: 0 0 1.5em 0;
@@ -55,34 +50,6 @@
   top: 0;
   left: 0;
   padding: 0 0.8em;
-}
-
-span.synSpecial {
-  color: #c000c0;
-}
-
-span.synType {
-  color: #3ec63e;
-}
-
-span.synComment {
-  color: #4f80e5;
-}
-
-span.synPreProc {
-  color: #9355e6;
-}
-
-span.synIdentifier {
-  color: #51cfcf;
-}
-
-span.synConstant {
-  color: #f66;
-}
-
-span.synStatement {
-  color: #d88a17;
 }
 
 /* /code block */
