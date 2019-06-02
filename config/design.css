@@ -1,211 +1,60 @@
-/* Responsive: yes */
-
-/* <system section="theme" selected="8454420450093337097"> */
-@import url("https://blog.hatena.ne.jp/-/theme/8454420450093337097.css");
+/* <system section="theme" selected="smooth"> */
+@import "/css/theme/smooth/smooth.css";
 
 /* </system> */
 
-/* Mixed Content解消 */
-.hatena-module-search-box .search-module-button {
-  background: rgba(48, 48, 48, 0.5) url(https://cdn.blog.st-hatena.com/images/theme/search_w@2x.png) no-repeat center center;
-  background-size: 24px 24px;
+/* normalize link color */
+.entry-content a {
+  color: #007bff;
 }
 
-/* /Mixed Content解消 */
+/* /normalize link color */
 
-/* 2カラムレイアウト */
-#main {
-  width: calc(960px - 360px);
-  float: left;
-}
-
-#container #content {
-  width: calc(960px);
-}
-
-#box2 {
-  width: 300px;
-  padding: 24px;
-  float: right;
-  margin-top: 0;
-  margin-bottom: 60px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  border-radius: 2px;
-  -webkit-animation-duration: 0.4s;
-  -webkit-animation-fill-mode: both;
-  -webkit-animation-name: slideRight;
-  -webkit-animation-name: slideRight;
-  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-
-@-webkit-keyframes slideRight {
-  0% {
-    -webkit-transform: translateX(6.25em);
-    transform: translateX(6.25em);
-  }
-
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideRight {
-  0% {
-    -webkit-transform: translateX(6.25em);
-    transform: translateX(6.25em);
-  }
-
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-
-#box2-inner {
-  width: auto;
-}
-
-.hatena-module {
-  text-align: left;
-  padding-right: 0;
-  width: 300px;
-  float: left;
-}
-
-@media (max-width: 960px) {
-  #main,
-  #box2,
-  .hatena-module {
-    width: 100%;
-    float: none;
-  }
-
-  #container #content {
-    width: 95%;
-  }
-
-  #box2 {
-    padding: 0;
-    background-color: transparent;
-    box-shadow: none;
-    border-radius: initial;
-    -webkit-animation-duration: initial;
-    -webkit-animation-fill-mode: none;
-    -webkit-animation-name: initial;
-    -webkit-animation-timing-function: initial;
-  }
-}
-
-/* /2カラムレイアウト */
-
-/* カスタムカラー */
-body {
-  color: #212121;
-}
-
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a,
-h1 a:hover,
-h2 a:hover,
-h3 a:hover,
-h4 a:hover,
-h5 a:hover,
-h6 a:hover,
-h1 a:visited,
-h2 a:visited,
-h3 a:visited,
-h4 a:visited,
-h5 a:visited,
-h6 a:visited {
-  color: #212121;
-}
-
-/* グローバルヘッダー（一番上のはてなロゴ等があるエリア） */
-#globalheader-container {
-  background-color: #3f51b5;
-  color: #fff;
-}
-
-/* ヘッダー（ブログ名があるエリア） */
-#blog-title {
-  background-color: #3f51b5;
-}
-
-/* /カスタムカラー */
-
-/* リスト形式のリンクをブロック化 */
+/* sidebar */
 .hatena-module-links ul li a,
 .hatena-module-category ul li a {
   display: block;
 }
 
-/* /リスト形式のリンクをブロック化 */
+/* /sidebar */
 
-/* カスタムカラー */
-#title a {
-  color: #fff;
+/* normalize link color */
+
+.comment-box .comment a,
+.hatena-module-profile .id a,
+.archive-module-calendar .calendar-day a {
+  color: #007bff;
 }
 
-/* タイトルをホバーした際のカラー */
-#title a::after {
-  background-color: #fff;
+.entry-content a:hover,
+.comment-box .comment a:hover,
+.hatena-module-profile .id a:hover,
+.archive-module-calendar .calendar-day a:hover {
+  color: #0056b3;
 }
 
-/* フッター */
-#footer {
-  background-color: #3f51b5;
-  color: #fff;
-}
+/* /normalize link color */
 
-/* 日付 */
-.date-day {
-  background: #3f51b5;
-  color: #fff;
-}
-
-/* 続きを読む */
-a.entry-see-more {
-  background-color: #3f51b5;
-  color: #fff;
-}
-
-/* 読者になる */
-.hatena-follow-button {
-  color: #fff !important;
-  background: #3f51b5 !important;
-}
-
-/* /カスタムカラー */
-
-/* ヘッダー */
-#title {
-  font-weight: 700;
-}
-
-#blog-description {
-  display: none;
-}
-
-/* /ヘッダー */
-
-/* 画像の横幅を制限 */
-.entry-content table img {
-  max-width: 100%;
-}
-
-/* 画像の横幅を制限 */
-
-/* コードブロック */
-.entry-content pre {
+/* code block */
+.entry-content pre.code {
   background-color: #fafafa;
   color: #444;
+}
+
+.entry-content pre.code[data-label] {
+  position: relative;
+  margin: 0 0 1.5em 0;
+  padding: 1.6em 1em 1em;
+}
+
+.entry-content pre.code[data-label]::before {
+  content: attr(data-label);
+  background-color: #444;
+  color: #fafafa;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 0.8em;
 }
 
 span.synSpecial {
@@ -236,4 +85,97 @@ span.synStatement {
   color: #d88a17;
 }
 
-/* /コードブロック */
+/* /code block */
+
+/* share button */
+.jp-munieru-blog-entry-share {
+  padding: 0 24px;
+}
+
+.jp-munieru-blog-entry-share-items {
+  margin: 30px auto 10px;
+  padding: 0;
+  overflow: hidden;
+  table-layout: fixed;
+  display: table;
+  width: 100%;
+}
+
+.jp-munieru-blog-entry-share-items li {
+  list-style-type: none;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.jp-munieru-blog-entry-share-items li:last-child {
+  margin-right: 0;
+}
+
+.jp-munieru-blog-entry-share-link {
+  position: relative;
+  display: block;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  overflow: hidden;
+  height: 42px;
+  line-height: 42px;
+}
+
+.jp-munieru-blog-entry-share-link::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.jp-munieru-blog-entry-share-link:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.jp-munieru-blog-entry-share-link-twitter {
+  background: #55acee;
+}
+
+.jp-munieru-blog-entry-share-link-facebook {
+  background: #3a5795;
+}
+
+.jp-munieru-blog-entry-share-link-hatebu {
+  background: #00a5de;
+}
+
+.jp-munieru-blog-entry-share-link-line {
+  background: #00c300;
+}
+
+.jp-munieru-blog-entry-share-link-pocket {
+  background: #ed4055;
+}
+
+.jp-munieru-blog-entry-share-icon {
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .jp-munieru-blog-entry-share-label {
+    display: none;
+  }
+
+  .jp-munieru-blog-entry-share-icon {
+    margin-right: 0;
+  }
+}
+
+/* /share button */
