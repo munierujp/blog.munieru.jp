@@ -7,6 +7,38 @@
 
 /* </system> */
 
+/* normalize link color */
+.entry-content a {
+  color: #007bff;
+}
+
+/* /normalize link color */
+
+/* sidebar */
+.hatena-module-links ul li a,
+.hatena-module-category ul li a {
+  display: block;
+}
+
+/* /sidebar */
+
+/* normalize link color */
+
+.comment-box .comment a,
+.hatena-module-profile .id a,
+.archive-module-calendar .calendar-day a {
+  color: #007bff;
+}
+
+.entry-content a:hover,
+.comment-box .comment a:hover,
+.hatena-module-profile .id a:hover,
+.archive-module-calendar .calendar-day a:hover {
+  color: #0056b3;
+}
+
+/* /normalize link color */
+
 /* code block */
 .entry-content pre.code {
   background-color: #fafafa;
@@ -58,14 +90,6 @@ span.synStatement {
 }
 
 /* /code block */
-
-/* sidebar */
-.hatena-module-links ul li a,
-.hatena-module-category ul li a {
-  display: block;
-}
-
-/* /sidebar */
 
 /* share button */
 .jp-munieru-blog-entry-share {
