@@ -35,12 +35,7 @@
 
 /* /normalize link color */
 
-/* code block */
-.entry-content pre.code {
-  background-color: #fafafa;
-  color: #444;
-}
-
+/* code block label */
 .entry-content pre.code[data-label] {
   position: relative;
   margin: 0 0 1.5em 0;
@@ -57,35 +52,19 @@
   padding: 0 0.8em;
 }
 
-span.synSpecial {
-  color: #c000c0;
+/* /code block label */
+
+/* color code preview */
+.jp-munieru-blog-color-code-preview {
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  border: 1px solid #d1d5da;
+  border-color: rgba(27, 31, 35, 0.15);
+  border-radius: 3px;
 }
 
-span.synType {
-  color: #3ec63e;
-}
-
-span.synComment {
-  color: #4f80e5;
-}
-
-span.synPreProc {
-  color: #9355e6;
-}
-
-span.synIdentifier {
-  color: #51cfcf;
-}
-
-span.synConstant {
-  color: #f66;
-}
-
-span.synStatement {
-  color: #d88a17;
-}
-
-/* /code block */
+/* /color code preview */
 
 /* share button */
 .jp-munieru-blog-entry-share {
