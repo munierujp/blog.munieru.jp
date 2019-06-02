@@ -58,3 +58,11 @@ span.synStatement {
 }
 
 /* /code block */
+
+/* sidebar */
+.hatena-module-links ul li a,
+.hatena-module-category ul li a {
+  display: block;
+}
+
+/* /sidebar */
