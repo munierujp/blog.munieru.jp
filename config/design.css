@@ -35,7 +35,7 @@
 
 /* /normalize link color */
 
-/* code block */
+/* code block label */
 .entry-content pre.code[data-label] {
   position: relative;
   margin: 0 0 1.5em 0;
@@ -52,7 +52,7 @@
   padding: 0 0.8em;
 }
 
-/* /code block */
+/* /code block label */
 
 /* color code preview */
 .jp-munieru-blog-color-code-preview {
