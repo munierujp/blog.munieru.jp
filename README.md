@@ -35,5 +35,8 @@ console.log(message)
 #### Circle
 
 ```md
-<span class="jp-munieru-blog-symbol-circle" style="margin-right: 2px; background-color: #F44336;"></span>Red
+<span
+  class="jp-munieru-blog-symbol-circle"
+  style="background-color: #F44336;">
+</span>
 ```
