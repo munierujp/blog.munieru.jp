@@ -9,7 +9,7 @@
     "fix": "npm-run-all -p fix:*"
   },
   "devDependencies": {
-    "eslint": "5.12.0",
+    "eslint": "5.16.0",
     "eslint-config-standard": "12.0.0",
     "eslint-plugin-html": "5.0.0",
     "eslint-plugin-import": "2.14.0",
