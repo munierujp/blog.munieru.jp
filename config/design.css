@@ -35,6 +35,17 @@
 
 /* /normalize link color */
 
+/* scrollable table */
+
+@media only screen and (max-width: 600px) {
+  .entry-content table {
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* /scrollable table */
+
 /* code block label */
 .entry-content pre.code[data-label] {
   position: relative;
