@@ -1,49 +1,50 @@
 <script>
 (function () {
-  window.addEventListener('DOMContentLoaded', () => {
-    addColorCodePreviews()
-    addLabelToCodeBlocks()
-    makeExternalLinkOpenInNewTab()
-  }, false)
+  const isColorCode = (text) => {
+    return text.match(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/)
+  }
 
-  function addColorCodePreviews () {
+  const getColorCodeElements = () => {
+    return Array.from(document.getElementsByTagName('code'))
+      .filter(codeElement => isColorCode(codeElement.textContent))
+  }
+
+  const addColorCodePreviews = () => {
     getColorCodeElements().forEach(codeElement => {
       const color = codeElement.textContent
       codeElement.outerHTML = `${codeElement.outerHTML}<span class="jp-munieru-blog-color-code-preview" style="background-color: ${color};"></span>`
     })
   }
 
-  function getColorCodeElements () {
-    return Array.from(document.getElementsByTagName('code'))
-      .filter(codeElement => isColorCode(codeElement.textContent))
+  const getCodeBlockElements = () => {
+    return Array.from(document.querySelectorAll('.entry-content pre.code'))
   }
 
-  function isColorCode (text) {
-    return text.match(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/)
-  }
-
-  function addLabelToCodeBlocks () {
+  const addLabelToCodeBlocks = () => {
     getCodeBlockElements().forEach(codeBlockElement => {
       const label = codeBlockElement.parentElement.dataset.label || codeBlockElement.dataset.lang
+
       if (label) {
         codeBlockElement.dataset.label = label
       }
     })
   }
 
-  function getCodeBlockElements () {
-    return Array.from(document.querySelectorAll('.entry-content pre.code'))
+  const getExternalLinkElements = () => {
+    return Array.from(document.querySelectorAll(`a[href^="http"]:not([href^="${location.origin}"])`))
   }
 
-  function makeExternalLinkOpenInNewTab () {
+  const makeExternalLinkOpenInNewTab = () => {
     getExternalLinkElements().forEach(linkElement => {
       linkElement.setAttribute('target', '_blank')
       linkElement.setAttribute('rel', 'noopener noreferrer')
     })
   }
 
-  function getExternalLinkElements () {
-    return Array.from(document.querySelectorAll(`a[href^="http"]:not([href^="${location.origin}"])`))
-  }
+  window.addEventListener('DOMContentLoaded', () => {
+    addColorCodePreviews()
+    addLabelToCodeBlocks()
+    makeExternalLinkOpenInNewTab()
+  }, false)
 })()
 </script>
