@@ -41,10 +41,16 @@
     })
   }
 
+  const addScrollHintToTableElements = () => {
+    // eslint-disable-next-line no-new
+    new ScrollHint('.entry-content table')
+  }
+
   window.addEventListener('DOMContentLoaded', () => {
     addColorCodePreviews()
     addLabelToCodeBlocks()
     makeExternalLinkOpenInNewTab()
+    addScrollHintToTableElements()
   }, false)
 })()
 </script>
