@@ -1,5 +1,19 @@
 <script>
 (function () {
+  const getCodeBlockElements = () => {
+    return Array.from(document.querySelectorAll('.entry-content pre.code'))
+  }
+
+  const addLabelToCodeBlocks = () => {
+    getCodeBlockElements().forEach(codeBlockElement => {
+      const label = codeBlockElement.parentElement.dataset.label || codeBlockElement.dataset.lang
+
+      if (label) {
+        codeBlockElement.dataset.label = label
+      }
+    })
+  }
+
   const isColorCode = (text) => {
     return text.match(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/)
   }
@@ -16,18 +30,9 @@
     })
   }
 
-  const getCodeBlockElements = () => {
-    return Array.from(document.querySelectorAll('.entry-content pre.code'))
-  }
-
-  const addLabelToCodeBlocks = () => {
-    getCodeBlockElements().forEach(codeBlockElement => {
-      const label = codeBlockElement.parentElement.dataset.label || codeBlockElement.dataset.lang
-
-      if (label) {
-        codeBlockElement.dataset.label = label
-      }
-    })
+  const addScrollHintToTableElements = () => {
+    // eslint-disable-next-line no-new
+    new ScrollHint('.entry-content table')
   }
 
   const getExternalLinkElements = () => {
@@ -41,16 +46,11 @@
     })
   }
 
-  const addScrollHintToTableElements = () => {
-    // eslint-disable-next-line no-new
-    new ScrollHint('.entry-content table')
-  }
-
   window.addEventListener('DOMContentLoaded', () => {
-    addColorCodePreviews()
     addLabelToCodeBlocks()
-    makeExternalLinkOpenInNewTab()
+    addColorCodePreviews()
     addScrollHintToTableElements()
+    makeExternalLinkOpenInNewTab()
   }, false)
 })()
 </script>
