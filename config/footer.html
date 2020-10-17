@@ -1,50 +1,77 @@
 <script>
+// @ts-check
+
 (function () {
-  const isColorCode = (text) => {
-    return text.match(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/)
+  /** @typedef {() => void} Action */
+
+  /**
+   * @returns {HTMLElement[]}
+   */
+  const getExternalLinkElements = () => {
+    return Array.from(document.querySelectorAll(`a[href^="http"]:not([href^="${location.origin}"])`))
   }
 
+  /**
+   * @returns {HTMLElement[]}
+   */
+  const getCodeBlockElements = () => {
+    return Array.from(document.querySelectorAll('.entry-content pre.code'))
+  }
+
+  /**
+   * @param {string} text
+   * @returns {boolean}
+   */
+  const isColorCode = (text) => {
+    if (text.match(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/)) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  /**
+   * @returns {HTMLElement[]}
+   */
   const getColorCodeElements = () => {
     return Array.from(document.getElementsByTagName('code'))
       .filter(codeElement => isColorCode(codeElement.textContent))
   }
 
-  const addColorCodePreviews = () => {
-    getColorCodeElements().forEach(codeElement => {
-      const color = codeElement.textContent
-      codeElement.outerHTML = `${codeElement.outerHTML}<span class="jp-munieru-blog-color-code-preview" style="background-color: ${color};"></span>`
-    })
-  }
+  /** @type {Record<string, Action>} */
+  const actions = {
+    addLabelToCodeBlocks () {
+      getCodeBlockElements().forEach(codeBlockElement => {
+        const label = codeBlockElement.parentElement.dataset.label || codeBlockElement.dataset.lang
 
-  const getCodeBlockElements = () => {
-    return Array.from(document.querySelectorAll('.entry-content pre.code'))
-  }
-
-  const addLabelToCodeBlocks = () => {
-    getCodeBlockElements().forEach(codeBlockElement => {
-      const label = codeBlockElement.parentElement.dataset.label || codeBlockElement.dataset.lang
-
-      if (label) {
-        codeBlockElement.dataset.label = label
-      }
-    })
-  }
-
-  const getExternalLinkElements = () => {
-    return Array.from(document.querySelectorAll(`a[href^="http"]:not([href^="${location.origin}"])`))
-  }
-
-  const makeExternalLinkOpenInNewTab = () => {
-    getExternalLinkElements().forEach(linkElement => {
-      linkElement.setAttribute('target', '_blank')
-      linkElement.setAttribute('rel', 'noopener noreferrer')
-    })
+        if (label) {
+          codeBlockElement.dataset.label = label
+        }
+      })
+    },
+    addColorCodePreviews () {
+      getColorCodeElements().forEach(codeElement => {
+        const color = codeElement.textContent
+        codeElement.outerHTML = `${codeElement.outerHTML}<span class="jp-munieru-blog-color-code-preview" style="background-color: ${color};"></span>`
+      })
+    },
+    addScrollHintToTables () {
+      // @ts-expect-error
+      // eslint-disable-next-line no-new
+      new ScrollHint('.entry-content table')
+    },
+    makeExternalLinkOpenInNewTab () {
+      getExternalLinkElements().forEach(linkElement => {
+        linkElement.setAttribute('target', '_blank')
+        linkElement.setAttribute('rel', 'noopener noreferrer')
+      })
+    }
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    addColorCodePreviews()
-    addLabelToCodeBlocks()
-    makeExternalLinkOpenInNewTab()
+    Object.keys(actions)
+      .map(key => actions[key])
+      .forEach(action => action())
   }, false)
 })()
 </script>
