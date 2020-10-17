@@ -58,7 +58,9 @@
     addScrollHintToTables () {
       // @ts-expect-error
       // eslint-disable-next-line no-new
-      new ScrollHint('.entry-content table')
+      new ScrollHint('.entry-content table', {
+        remainingTime: 3 * 1000
+      })
     },
     makeExternalLinkOpenInNewTab () {
       getExternalLinkElements().forEach(linkElement => {
