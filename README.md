@@ -26,7 +26,7 @@ console.log(message)
 
 ### Color code preview
 
-```md
+```html
 `#F44336`
 ```
 
@@ -34,7 +34,7 @@ console.log(message)
 
 #### Circle
 
-```md
+```html
 <span
   class="jp-munieru-blog-symbol-circle"
   style="background-color: #F44336;"
