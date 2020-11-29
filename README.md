@@ -37,6 +37,6 @@ console.log(message)
 ```md
 <span
   class="jp-munieru-blog-symbol-circle"
-  style="background-color: #F44336;">
-</span>
+  style="background-color: #F44336;"
+></span>
 ```
