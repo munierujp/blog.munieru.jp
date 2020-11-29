@@ -8,14 +8,14 @@ source code for [blog.munieru.jp](https://blog.munieru.jp/)
 
 ### Code block label
 
-````md
+````html
 ```javascript
 const message = 'Hello World'
 console.log(message)
 ```
 ````
 
-````md
+````html
 <div data-label="index.js">
 ```javascript
 const message = 'Hello World'
