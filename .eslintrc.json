@@ -8,6 +8,6 @@
      "html"
   ],
   "globals": {
-    "ScrollHint": "off"
+    "ScrollHint": "readonly"
   }
 }
