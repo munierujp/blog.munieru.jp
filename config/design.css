@@ -49,7 +49,7 @@
 /* code block label */
 .entry-content pre.code[data-label] {
   position: relative;
-  margin: 0 0 1.5em 0;
+  margin: 0 0 1.5em;
   padding: 1.6em 1em 1em;
 }
 
@@ -71,7 +71,7 @@
   width: 0.8em;
   height: 0.8em;
   border: 1px solid #d1d5da;
-  border-color: rgba(27, 31, 35, 0.15);
+  border-color: rgb(27 31 35 / 15%);
   border-radius: 3px;
 }
 
@@ -119,12 +119,11 @@
   left: 50%;
   z-index: 2;
   display: block;
-  content: '';
+  content: "";
   width: 0;
   height: 0;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgb(255 255 255 / 30%);
   border-radius: 50%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   opacity: 0;
 }
