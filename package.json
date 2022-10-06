@@ -6,7 +6,7 @@
     "lint:js": "eslint --ext .js,.html --ignore-path .gitignore ."
   },
   "devDependencies": {
-    "eslint": "8.19.0",
+    "eslint": "8.24.0",
     "eslint-config-standard": "16.0.3",
     "eslint-plugin-html": "6.2.0",
     "eslint-plugin-import": "2.25.4",
