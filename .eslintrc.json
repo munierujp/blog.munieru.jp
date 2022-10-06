@@ -1,5 +1,5 @@
 {
-  "extends": "standard",
+  "extends": "@munierujp",
   "env": {
     "browser": true,
     "jquery": true
