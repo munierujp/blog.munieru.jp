@@ -1,3 +1,5 @@
+[![lint](https://github.com/munierujp/blog.munieru.jp/actions/workflows/lint.yml/badge.svg)](https://github.com/munierujp/blog.munieru.jp/actions/workflows/lint.yml)
+
 # blog.munieru.jp
 
 source code for [blog.munieru.jp](https://blog.munieru.jp/)
