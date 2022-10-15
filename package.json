@@ -6,7 +6,7 @@
     "lint:js": "eslint --ext .js,.html --ignore-path .gitignore ."
   },
   "devDependencies": {
-    "@munierujp/eslint-config": "1.0.2",
+    "@munierujp/eslint-config": "1.0.3",
     "eslint": "8.25.0",
     "eslint-plugin-html": "7.1.0",
     "husky": "4.3.8",
