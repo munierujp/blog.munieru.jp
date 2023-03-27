@@ -1,6 +1,6 @@
 // @ts-check
 
-/** @typedef {import('eslint/lib/shared/types').ConfigData} ConfigData */
+/** @typedef {import('eslint').ESLint.ConfigData} ConfigData */
 
 /**
  * @type {ConfigData}
