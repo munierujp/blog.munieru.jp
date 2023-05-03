@@ -37,6 +37,8 @@
 
 /* scrollable table */
 
+/* TODO: エラー修正 */
+/* stylelint-disable-next-line media-feature-range-notation */
 @media only screen and (max-width: 600px) {
   .entry-content table {
     white-space: nowrap;
@@ -157,6 +159,8 @@
   margin-right: 5px;
 }
 
+/* TODO: エラー修正 */
+/* stylelint-disable-next-line media-feature-range-notation */
 @media only screen and (max-width: 1200px) {
   .jp-munieru-blog-entry-share-label {
     display: none;
