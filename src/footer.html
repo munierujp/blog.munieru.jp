@@ -31,14 +31,14 @@
    */
   const getColorCodeElements = () => {
     return Array.from(document.getElementsByTagName('code'))
-      .filter(codeElement => isColorCode(codeElement.textContent))
+      .filter(({ textContent }) => textContent !== null && isColorCode(textContent))
   }
 
   /** @type {Record<string, Action>} */
   const actions = {
     addLabelToCodeBlocks () {
       getCodeBlockElements().forEach(codeBlockElement => {
-        const label = codeBlockElement.parentElement.dataset.label || codeBlockElement.dataset.lang
+        const label = codeBlockElement.parentElement?.dataset.label || codeBlockElement.dataset.lang
 
         if (label) {
           codeBlockElement.dataset.label = label
