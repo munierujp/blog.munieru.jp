@@ -13,6 +13,6 @@
     "markuplint": "3.11.0",
     "npm-run-all2": "6.0.6",
     "stylelint": "15.10.1",
-    "stylelint-config-standard": "33.0.0"
+    "stylelint-config-standard": "34.0.0"
   }
 }
