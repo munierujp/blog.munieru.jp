@@ -6,6 +6,9 @@
     "lint:html": "markuplint \"**/*.html\"",
     "lint:js": "eslint --ext .js,.html --ignore-path .gitignore ."
   },
+  "engines": {
+    "node": "18.17.1"
+  },
   "devDependencies": {
     "@munierujp/eslint-config": "19.0.0",
     "eslint": "8.49.0",
