@@ -1,5 +1,6 @@
 {
   "name": "blog.munieru.jp",
+  "type": "module",
   "scripts": {
     "lint": "npm-run-all -p lint:*",
     "lint:css": "stylelint '**/*.css'",
