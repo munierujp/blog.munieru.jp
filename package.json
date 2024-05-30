@@ -14,7 +14,7 @@
     "@munierujp/eslint-config": "30.0.1",
     "eslint": "8.57.0",
     "eslint-plugin-html": "8.1.1",
-    "markuplint": "4.8.1",
+    "markuplint": "4.9.0",
     "npm-run-all2": "6.1.2",
     "stylelint": "16.6.1",
     "stylelint-config-standard": "36.0.0"
