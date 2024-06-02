@@ -11,7 +11,7 @@
     "node": "20.12.2"
   },
   "devDependencies": {
-    "@munierujp/eslint-config": "30.0.3",
+    "@munierujp/eslint-config": "30.1.0",
     "eslint": "8.57.0",
     "eslint-plugin-html": "8.1.1",
     "markuplint": "4.9.0",
