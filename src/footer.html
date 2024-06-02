@@ -23,7 +23,7 @@
    * @returns {boolean}
    */
   const isColorCode = (text) => {
-    return /^#[\dA-F]{3}|[\dA-F]{6}$/i.test(text)
+    return /^#[0-9a-f]{3}|[0-9a-f]{6}$/i.test(text)
   }
 
   /**
