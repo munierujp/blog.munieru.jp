@@ -16,7 +16,7 @@
     "eslint-plugin-html": "8.1.1",
     "markuplint": "4.9.3",
     "npm-run-all2": "6.2.2",
-    "stylelint": "16.8.1",
+    "stylelint": "16.8.2",
     "stylelint-config-standard": "36.0.1"
   }
 }
