@@ -17,6 +17,6 @@
     "markuplint": "4.11.4",
     "npm-run-all2": "7.0.2",
     "stylelint": "16.14.1",
-    "stylelint-config-standard": "36.0.1"
+    "stylelint-config-standard": "37.0.0"
   }
 }
