@@ -8,7 +8,7 @@
     "lint:js": "eslint --ext .js,.html --ignore-path .gitignore ."
   },
   "engines": {
-    "node": "20.19.4"
+    "node": "24.12.0"
   },
   "devDependencies": {
     "@munierujp/eslint-config": "32.0.0",
